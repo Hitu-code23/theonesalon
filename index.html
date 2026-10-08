@@ -4,8 +4,12 @@
 <title>The One Gents Salon — TECOM, Dubai</title>
 <meta name="description" content="The One Gents Salon, MCN Hive, Barsha Heights, Dubai. Precision grooming. Elevated.">
 <meta name="theme-color" content="#080808">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23080808'/%3E%3Ctext x='32' y='45' font-size='36' font-family='Arial' font-weight='800' text-anchor='middle' fill='%23C9B38F'%3E1%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website"><meta property="og:title" content="The One Gents Salon — TECOM, Dubai"><meta property="og:description" content="Precision grooming. Elevated. MCN Hive, Barsha Heights, Dubai.">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Add after hosting (must be an absolute URL, 1200x630): <meta property="og:image" content="https://YOUR-DOMAIN/og.jpg"> -->
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&family=Cairo:wght@300;500;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#080808;--bg2:#111;--tx:#F3F0EA;--mu:#9A9892;--ac:#C9B38F;--f:'Manrope','Inter Tight',system-ui,sans-serif;--e:cubic-bezier(.16,1,.3,1);--pad:clamp(20px,5vw,72px)}
 *{box-sizing:border-box;margin:0;padding:0}html{background:var(--bg);-webkit-text-size-adjust:100%}
@@ -104,6 +108,15 @@ address{font-style:normal;font-weight:800;font-size:clamp(26px,3.4vw,50px);line-
 .fin-in .h2{font-size:clamp(54px,11.5vw,210px)}.fin-in p{margin:28px 0 38px;color:var(--tx);opacity:.85}
 footer{position:relative;z-index:2;background:var(--bg);padding:50px var(--pad) calc(40px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;border-top:1px solid rgba(243,240,234,.1)}
 footer nav{all:unset}footer .fl{display:flex;gap:26px;flex-wrap:wrap}footer a{font-size:12px;letter-spacing:.2em;color:var(--mu);transition:color .4s}footer a:hover{color:var(--ac)}
+.lg{font-size:11px;letter-spacing:.2em;border:1px solid rgba(243,240,234,.3);padding:8px 12px;font-weight:500;transition:border-color .4s,color .4s}.lg:hover{border-color:var(--ac);color:var(--ac)}
+html[lang=ar]{--f:'Cairo','Manrope',system-ui,sans-serif}
+html[lang=ar] *{letter-spacing:0!important;text-transform:none!important}
+html[lang=ar] h1,html[lang=ar] .h2,html[lang=ar] .cr,html[lang=ar] #svT{line-height:1.2}
+html[lang=ar] .t1{line-height:.86}html[lang=ar] .t2{line-height:1.3;margin-top:.2em}html[lang=ar] .ln{padding-bottom:.18em}
+[dir=rtl] #trk{direction:ltr}
+[dir=rtl] #svc .shade{background:linear-gradient(270deg,rgba(8,8,8,.85),rgba(8,8,8,.1) 70%),linear-gradient(transparent 50%,rgba(8,8,8,.9))}
+[dir=rtl] #fin::after{background:linear-gradient(270deg,rgba(8,8,8,.7),transparent)}
+[dir=rtl] .btn:hover b{transform:translateX(-6px)}
 /* loader & cursor */
 #ld{position:fixed;inset:0;z-index:100;background:#080808;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px}
 #ld .wm{font-weight:800;font-size:clamp(34px,8vw,90px);letter-spacing:.3em;margin-right:-.3em;clip-path:inset(0 100% 0 0)}
@@ -123,7 +136,7 @@ body::after{opacity:.06}}
 <div id="ld" aria-hidden="true"><div class="wm">THE ONE</div><div class="n">01</div></div>
 <div id="cur" aria-hidden="true"></div>
 <nav id="nav"><a class="logo" href="#hero" aria-label="The One Gents Salon, top">THE ONE</a>
-<div class="nl"><a href="#exp">EXPERIENCE</a><a href="#svc">SERVICES</a><a href="#craft">THE CRAFT</a><a href="#loc">LOCATION</a><a class="btn mag" data-act="book" href="#fin">BOOK NOW</a></div>
+<div class="nl"><a href="#exp">EXPERIENCE</a><a href="#svc">SERVICES</a><a href="#craft">THE CRAFT</a><a href="#loc">LOCATION</a><a class="btn mag" data-act="book" href="#fin">BOOK NOW</a><button class="lg" id="lg" aria-label="Switch language">AR</button></div>
 <button class="burger" id="bg" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button></nav>
 <div id="menu" role="dialog" aria-label="Menu"><a class="mi" href="#exp"><span>Experience</span></a><a class="mi" href="#svc"><span>Services</span></a><a class="mi" href="#craft"><span>The Craft</span></a><a class="mi" href="#loc"><span>Location</span></a><a class="mi" data-act="book" href="#fin" style="color:var(--ac)"><span>Book now</span></a></div>
 
@@ -156,7 +169,7 @@ body::after{opacity:.06}}
 <section id="trust" class="pad" aria-label="Reputation"><div class="sn meta">05 · Reputation</div>
 <h2 class="h2">Trusted in TECOM.</h2>
 <div class="stats"><div><b><span id="c1">0</span><em>★</em></b><span class="meta">Google rating</span></div><div><b><span id="c2">0</span><em>+</em></b><span class="meta">Reviews</span></div><div><b>TECOM</b><span class="meta">Dubai</span></div></div>
-<div id="rv" aria-live="polite" hidden></div></section>
+<div id="rv" aria-live="polite" hidden></div><a class="btn mag" data-act="dir" target="_blank" rel="noopener" href="#" style="margin-top:40px">Read reviews on Google <b>→</b></a></section>
 
 <section id="loc" class="pad"><div><div class="sn meta">06 · Location</div>
 <h2 class="h2" style="font-size:clamp(40px,6.4vw,110px)">Find us.</h2>
@@ -176,6 +189,7 @@ body::after{opacity:.06}}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 /* ===== EDIT BUSINESS INFO HERE ===== */
 const CONFIG={
@@ -187,15 +201,23 @@ const CONFIG={
  GOOGLE_MAPS:'https://www.google.com/maps/search/?api=1&query=The+One+Gents+Salon+MCN+Hive+Barsha+Heights+Dubai',
  OPENING_HOURS:'',    // not shown until provided
  STATS:{rating:4.8,reviews:500}, // TODO confirm against live Google profile before launch; set null to show dashes
- REVIEWS:[],          // [{text:'…',name:'…'}] real Google reviews only
+ REVIEWS:[
+  {text:'Really looked after and gave perfect look. Danial and Enalyl was very friendly staff. Found perfect place for self care.',name:'Kunal Shinde'},
+  {text:'I tried my first time with Danial and the level of attention he pays is unmatchable. Should give him a try!',name:'Ziad Agamawy'},
+  {text:'Daniel was amazing he helped me with exact style I wanted. I highly recommend.',name:'Manik Malhotra'}],
  SERVICES:[           // confirm with salon: names/descriptions
-  {t:'HAIRCUT',d:'Precision cuts & styling'},{t:'BEARD',d:'Shape. Detail. Definition.'},
-  {t:'FACIAL',d:'Refresh & restore'},{t:'MANICURE',d:'Clean. Refined. Finished.'},{t:'PEDICURE',d:'Precision from head to toe.'}],
+  {t:'HAIRCUT',d:'Precision cuts & styling',ta:'قصّ الشعر',da:'قصّات دقيقة وتصفيف'},{t:'BEARD',d:'Shape. Detail. Definition.',ta:'اللحية',da:'شكل. تفاصيل. حضور.'},
+  {t:'FACIAL',d:'Refresh & restore',ta:'العناية بالوجه',da:'انتعاش وتجديد'},{t:'MANICURE',d:'Clean. Refined. Finished.',ta:'مانيكير',da:'نظافة. أناقة. لمسة أخيرة.'},{t:'PEDICURE',d:'Precision from head to toe.',ta:'باديكير',da:'دقّة من الرأس إلى القدمين.'}],
  IMAGES:{hero:'',exp:'',craft:'',cta:'',s0:'',s1:'',s2:'',s3:'',svc:['','','','','']} // drop in editorial photos (URL or relative path)
 };
 /* =================================== */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches,FINE=matchMedia('(hover:hover) and (pointer:fine)').matches,MOB=innerWidth<861;
+let LANG='en',lenis;try{LANG=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||'en'}catch(e){}
+if(LANG!='ar')LANG='en';
+const AR=[['.nl a:nth-child(1)','التجربة'],['.nl a:nth-child(2)','الخدمات'],['.nl a:nth-child(3)','الحرفة'],['.nl a:nth-child(4)','الموقع'],['.nl a.btn','احجز الآن'],['#menu a.mi:nth-child(1) span','التجربة'],['#menu a.mi:nth-child(2) span','الخدمات'],['#menu a.mi:nth-child(3) span','الحرفة'],['#menu a.mi:nth-child(4) span','الموقع'],['#menu a.mi:nth-child(5) span','احجز الآن'],['#hm','تيكوم · دبي'],['.t2','صالون رجالي'],['#hs','عناية دقيقة. بمستوى أرقى.'],['#hc a:nth-child(1)','احجز تجربتك <b>←</b>'],['#hc a:nth-child(2)','استكشف الخدمات <b>←</b>'],['#exp .sn','01 · التجربة'],['#eh','أكثر من مجرد قصّة شعر.'],['#ep','تجربة عناية راقية قائمة على الدقة والثقة والاهتمام بأدق التفاصيل.'],['.fr .tag','MCN Hive · البرشاء هايتس'],['#crt .ln:nth-child(1)>span','الدقة'],['#crt .ln:nth-child(2)>span','هي'],['#crt .ln:nth-child(3)>span','الفرق.'],['.cr-m','03 · الحرفة'],['.sth','04 · القصة المرئية'],['.pn:nth-child(1) .tag','قصّ'],['.pn:nth-child(2) .tag','تفصيل'],['.pn:nth-child(3) .tag','لمسة أخيرة'],['.pn:nth-child(4) .tag','ثقة'],['#trust .sn','05 · السمعة'],['#trust .h2','موثوقون في تيكوم.'],['.stats>div:nth-child(1) .meta','تقييم جوجل'],['.stats>div:nth-child(2) .meta','تقييمات'],['.stats>div:nth-child(3) b','تيكوم'],['.stats>div:nth-child(3) .meta','دبي'],['#trust .btn','اقرأ التقييمات على جوجل <b>←</b>'],['#loc .sn','06 · الموقع'],['#loc .h2','تفضّل بزيارتنا.'],['address','ذا وان جنتس صالون<br>MCN Hive، الطابق الأرضي<br>البرشاء هايتس، دبي'],['#loc .ctas a:nth-child(1)','احصل على الاتجاهات <b>←</b>'],['#loc .ctas a:nth-child(2)','اتصل بالصالون <b>←</b>'],['#fin .sn','07 · احجز'],['#fh .ln:nth-child(1)>span','جاهز'],['#fh .ln:nth-child(2)>span','لإطلالتك'],['#fh .ln:nth-child(3)>span','القادمة؟'],['#fp','موعدك القادم يبدأ من هنا.'],['#fc a:nth-child(1)','احجز تجربتك <b>←</b>'],['#fc a:nth-child(2)','تواصل مع الصالون <b>←</b>'],['footer .fl a:nth-child(1)','إنستغرام'],['footer .fl a:nth-child(2)','واتساب'],['footer .fl a:nth-child(3)','الهاتف'],['footer .fl a:nth-child(4)','خرائط جوجل'],['footer .meta','© <span id="yr"></span> ذا وان جنتس صالون. جميع الحقوق محفوظة.']];
+if(LANG=='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';AR.forEach(([q,t])=>{const e=$(q);if(e)e.innerHTML=t});$('#lg').textContent='EN'}
+$('#lg').onclick=()=>{const x=LANG=='ar'?'en':'ar';try{localStorage.setItem('lang',x)}catch(e){}location.search='?lang='+x};
 $('#yr').textContent=new Date().getFullYear();
 // images
 $$('.sc[data-s]').forEach(e=>{const u=CONFIG.IMAGES[e.dataset.s];if(u){e.style.backgroundImage=`linear-gradient(rgba(8,8,8,.35),rgba(8,8,8,.35)),url(${u})`;e.classList.add('img')}});
@@ -204,11 +226,11 @@ const C=CONFIG,wa=C.WHATSAPP&&'https://wa.me/'+C.WHATSAPP.replace(/\D/g,'');
 const L={book:C.BOOKING_URL||wa||(C.PHONE&&'tel:'+C.PHONE)||'#loc',call:C.PHONE?'tel:'+C.PHONE:(wa||'#loc'),wa:wa||'#loc',ig:C.INSTAGRAM||'#hero',dir:C.GOOGLE_MAPS};
 $$('[data-act]').forEach(a=>{a.href=L[a.dataset.act];if(/^http/.test(a.href)&&a.dataset.act!='dir'){a.target='_blank';a.rel='noopener'}});
 // services DOM
-const S=C.SERVICES,n=S.length,pad=v=>String(v).padStart(2,'0');
+const S=LANG=='ar'?C.SERVICES.map(s=>({t:s.ta||s.t,d:s.da||s.d})):C.SERVICES,n=S.length,pad=v=>String(v).padStart(2,'0');
 $('#stage').innerHTML=S.map((s,i)=>`<div class="sc sv" style="--x:${[70,30,60,40,75][i%5]}%;--y:${[35,55,30,60,40][i%5]}%;--a:${150+i*25}deg${i?';visibility:hidden':''}"></div>`).join('');
 $$('.sv').forEach((e,i)=>{const u=C.IMAGES.svc[i];if(u){e.style.backgroundImage=`linear-gradient(rgba(8,8,8,.3),rgba(8,8,8,.3)),url(${u})`;e.classList.add('img')}});
 $('#svL').innerHTML=S.map((s,i)=>`<li><button data-i="${i}" class="${i?'':'on'}">${pad(i+1)} ${s.t}</button></li>`).join('');
-$('#svD').textContent=S[0].d;
+$('#svD').textContent=S[0].d;$('#svT').textContent=S[0].t;
 let cur=0,svST;
 function setSvc(i,fast){if(i===cur)return;const sv=$$('.sv'),old=sv[cur],nw=sv[i],dir=i>cur?1:-1;cur=i;const d=fast||RM?0:1.1;
  $$('#svL button').forEach((b,k)=>b.classList.toggle('on',k===i));$('#svN').textContent=pad(i+1)+' / '+pad(n);
@@ -218,11 +240,11 @@ function setSvc(i,fast){if(i===cur)return;const sv=$$('.sv'),old=sv[cur],nw=sv[i
  gsap.timeline().to('#svT',{yPercent:-110*dir,duration:d?.35:0,ease:'power3.in'}).add(()=>{$('#svT').textContent=S[i].t;$('#svD').textContent=S[i].d}).fromTo('#svT',{yPercent:110*dir},{yPercent:0,duration:d?.9:0,ease:'expo.out'});
  gsap.fromTo('#svD',{opacity:0,y:14},{opacity:.85,y:0,duration:d?.9:0,delay:d?.35:0})}
 $('#svL').onclick=e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i;
- if(svST){scrollTo({top:svST.start+(i+.5)/n*(svST.end-svST.start),behavior:'smooth'})}else setSvc(i)};
+ if(svST){const y=svST.start+(i+.5)/n*(svST.end-svST.start);lenis?lenis.scrollTo(y):scrollTo({top:y,behavior:'smooth'})}else setSvc(i)};
 // nav + menu
 const nav=$('#nav'),menu=$('#menu');let open=false;
 addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>60),{passive:true});
-function toggleMenu(f){open=f??!open;document.body.classList.toggle('menu-open',open);$('#bg').setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';
+function toggleMenu(f){open=f??!open;document.body.classList.toggle('menu-open',open);$('#bg').setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';if(lenis)open?lenis.stop():lenis.start();
  if(open){gsap.set(menu,{visibility:'visible'});gsap.to(menu,{clipPath:'inset(0 0 0% 0)',duration:RM?0:1,ease:'expo.out'});gsap.fromTo('#menu .mi span',{yPercent:110},{yPercent:0,duration:RM?0:1,stagger:.07,delay:.15,ease:'expo.out'})}
  else gsap.to(menu,{clipPath:'inset(0 0 100% 0)',duration:RM?0:.7,ease:'expo.inOut',onComplete:()=>gsap.set(menu,{visibility:'hidden'})})}
 $('#bg').onclick=()=>toggleMenu();$$('#menu a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
@@ -236,6 +258,8 @@ if(RM){counters();setSvc(0,1)}
 function init(){
  gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true});
  const T=ScrollTrigger;
+ if(window.Lenis&&!MOB){lenis=new Lenis({lerp:.1,smoothWheel:true});lenis.on('scroll',T.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+  $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h.length>1&&$(h)){e.preventDefault();lenis.scrollTo(h)}}))}
  // hero intro
  gsap.set(['.t1','.t2'],{yPercent:115});gsap.set(['#hm','#hs'],{opacity:0,y:24});gsap.set('#hc .btn',{opacity:0,y:26});gsap.set('.hero-bg',{scale:1.28});gsap.set('.si',{opacity:0});
  const hero=()=>{gsap.timeline({defaults:{ease:'expo.out'}}).to('.hero-bg',{scale:1.02,duration:2.8,ease:'power2.out'},0).to('#hm',{opacity:1,y:0,duration:1.1},.15).to('.t1',{yPercent:0,duration:1.4},.3).to('.t2',{yPercent:0,duration:1.3},.5).to('#hs',{opacity:1,y:0,duration:1.1},.85).to('#hc .btn',{opacity:1,y:0,duration:1,stagger:.12},1.05).to('.si',{opacity:1,duration:1},1.4)};
