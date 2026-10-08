@@ -77,6 +77,9 @@ section{position:relative}main{position:relative;z-index:2;background:var(--bg)}
 .sl button:hover,.sl button.on{color:var(--tx)}.sl button.on::after,.sl button:hover::after{transform:scaleX(1)}
 .pg{position:absolute;z-index:5;left:var(--pad);right:var(--pad);bottom:0;height:2px;background:rgba(243,240,234,.12)}.pg i{display:block;height:100%;background:var(--ac);transform:scaleX(0);transform-origin:left}
 body.hv #svT:hover{transform:scale(1.04)}
+.pl{list-style:none;position:absolute;right:var(--pad);bottom:clamp(40px,8vh,80px);width:min(440px,38vw)}
+.pl li{display:flex;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(243,240,234,.12);font-size:clamp(14px,1.2vw,17px)}.pl li span{flex:1}.pl li b{font-weight:500;color:var(--ac);white-space:nowrap}
+[dir=rtl] .pl{right:auto;left:var(--pad)}
 /* craft */
 #craft{height:150vh;overflow:hidden;background:#000}
 .cr-in{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:0 var(--pad)}
@@ -128,7 +131,7 @@ body.hv #cur{display:flex}body.hv,body.hv a,body.hv button{cursor:none}
 #exp,#loc{grid-template-columns:1fr;min-height:0}.fr{aspect-ratio:4/5;max-height:70vh;width:100%}
 .pn{width:78vw;height:62vh}.pn:nth-child(2){width:58vw;margin-top:10vh}.pn:nth-child(3){margin-top:0}
 .stats b{font-size:clamp(38px,13vw,80px)}.stats .meta{font-size:10px;letter-spacing:.18em}
-.si{display:none}.ctas .btn{width:100%;justify-content:space-between}.sv-in{padding-bottom:44px}.sl{gap:6px 18px}
+.si{display:none}#svD{display:none}.pl{position:static;width:100%}.pl li{padding:7px 0;font-size:13.5px}.sv-in{gap:12px}.ctas .btn{width:100%;justify-content:space-between}.sv-in{padding-bottom:44px}.sl{gap:6px 18px}
 .t2{letter-spacing:.24em}.cr-in{justify-content:center}.map{max-height:none}
 body::after{opacity:.06}}
 @media(prefers-reduced-motion:reduce){body::after{animation:none}.si i::after,.pulse{animation:none}}
@@ -154,7 +157,7 @@ body::after{opacity:.06}}
 <div class="fr" data-cur="v"><div class="sc" data-s="exp"></div><span class="tag meta">MCN Hive · Barsha Heights</span></div></section>
 
 <section id="svc" aria-label="Services"><div class="stage" id="stage"></div><div class="shade"></div>
-<div class="sv-in"><div class="cnt" id="svN">01 / 05</div><div class="ln"><div id="svT">HAIRCUT</div></div><p id="svD"></p><ul class="sl" id="svL"></ul></div><div class="pg"><i id="svP"></i></div></section>
+<div class="sv-in"><div class="cnt" id="svN">01 / 05</div><div class="ln"><div id="svT">HAIRCUT</div></div><p id="svD"></p><ul class="pl" id="svPL"></ul><ul class="sl" id="svL"></ul></div><div class="pg"><i id="svP"></i></div></section>
 
 <section id="craft" aria-label="The craft"><div class="cr-in"><div class="sc" data-s="craft"></div>
 <h2 class="cr" id="crt"><span class="ln"><span>Precision</span></span><span class="ln o"><span>is the</span></span><span class="ln"><span>Difference.</span></span></h2>
@@ -205,10 +208,12 @@ const CONFIG={
   {text:'Really looked after and gave perfect look. Danial and Enalyl was very friendly staff. Found perfect place for self care.',name:'Kunal Shinde'},
   {text:'I tried my first time with Danial and the level of attention he pays is unmatchable. Should give him a try!',name:'Ziad Agamawy'},
   {text:'Daniel was amazing he helped me with exact style I wanted. I highly recommend.',name:'Manik Malhotra'}],
- SERVICES:[           // confirm with salon: names/descriptions
-  {t:'HAIRCUT',d:'Precision cuts & styling',ta:'قصّ الشعر',da:'قصّات دقيقة وتصفيف'},{t:'BEARD',d:'Shape. Detail. Definition.',ta:'اللحية',da:'شكل. تفاصيل. حضور.'},
-  {t:'FACIAL',d:'Refresh & restore',ta:'العناية بالوجه',da:'انتعاش وتجديد'},{t:'MANICURE',d:'Clean. Refined. Finished.',ta:'مانيكير',da:'نظافة. أناقة. لمسة أخيرة.'},{t:'PEDICURE',d:'Precision from head to toe.',ta:'باديكير',da:'دقّة من الرأس إلى القدمين.'}],
- IMAGES:{hero:'',exp:'',craft:'',cta:'',s0:'',s1:'',s2:'',s3:'',svc:['','','','','']} // drop in editorial photos (URL or relative path)
+ SERVICES:[           // from the salon menu (AED); items = [name, price, Arabic name]
+  {t:"CUTS",d:"Precision cuts, shaves & styling",ta:"القصّات",da:"قصّات وحلاقة وتصفيف بدقة",items:[["Haircut", 75, "قصّ شعر"], ["Beard shave", 45, "حلاقة لحية"], ["Kids haircut", 50, "قصّ أطفال"], ["Haircut + Beard shave", 115, "قصّ شعر + حلاقة لحية"], ["Head shave", 65, "حلاقة الرأس"], ["Head shave & Beard shave", 105, "حلاقة الرأس واللحية"]]},
+  {t:"FACE",d:"Wax, scrub & facials",ta:"الوجه",da:"إزالة الشعر وتقشير وعناية بالوجه",items:[["Nose & Ear wax", 20, "إزالة شعر الأنف والأذن"], ["Full face wax", 40, "إزالة شعر الوجه بالكامل"], ["Face scrub", 45, "تقشير الوجه"], ["Facial treatment", 245, "جلسة عناية بالوجه"], ["Facial express", 175, "عناية سريعة بالوجه"]]},
+  {t:"CARE",d:"Hands, feet & relaxation",ta:"العناية",da:"عناية باليدين والقدمين واسترخاء",items:[["Manicure", 60, "مانيكير"], ["Pedicure", 65, "باديكير"], ["Foot & Hand massage", 70, "مساج القدمين واليدين"], ["Head massage", 25, "مساج الرأس"], ["Hair steam", 145, "بخار الشعر"]]},
+  {t:"HAIR",d:"Style, color & treatments",ta:"الشعر",da:"تصفيف وصبغ وعلاجات",items:[["Hair style", 45, "تصفيف الشعر"], ["Hair straightening", 145, "فرد الشعر"], ["Hair color", 145, "صبغ الشعر"], ["Highlights", 590, "هايلايتس"], ["Keratin treatment", 390, "علاج الكيراتين"]]}],
+ IMAGES:{hero:'',exp:'',craft:'',cta:'',s0:'',s1:'',s2:'',s3:'',svc:['','','','']} // drop in editorial photos (URL or relative path)
 };
 /* =================================== */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -226,14 +231,16 @@ const C=CONFIG,wa=C.WHATSAPP&&'https://wa.me/'+C.WHATSAPP.replace(/\D/g,'');
 const L={book:C.BOOKING_URL||wa||(C.PHONE&&'tel:'+C.PHONE)||'#loc',call:C.PHONE?'tel:'+C.PHONE:(wa||'#loc'),wa:wa||'#loc',ig:C.INSTAGRAM||'#hero',dir:C.GOOGLE_MAPS};
 $$('[data-act]').forEach(a=>{a.href=L[a.dataset.act];if(/^http/.test(a.href)&&a.dataset.act!='dir'){a.target='_blank';a.rel='noopener'}});
 // services DOM
-const S=LANG=='ar'?C.SERVICES.map(s=>({t:s.ta||s.t,d:s.da||s.d})):C.SERVICES,n=S.length,pad=v=>String(v).padStart(2,'0');
+const S=LANG=='ar'?C.SERVICES.map(s=>({t:s.ta||s.t,d:s.da||s.d,items:s.items})):C.SERVICES,n=S.length,pad=v=>String(v).padStart(2,'0');
 $('#stage').innerHTML=S.map((s,i)=>`<div class="sc sv" style="--x:${[70,30,60,40,75][i%5]}%;--y:${[35,55,30,60,40][i%5]}%;--a:${150+i*25}deg${i?';visibility:hidden':''}"></div>`).join('');
 $$('.sv').forEach((e,i)=>{const u=C.IMAGES.svc[i];if(u){e.style.backgroundImage=`linear-gradient(rgba(8,8,8,.3),rgba(8,8,8,.3)),url(${u})`;e.classList.add('img')}});
 $('#svL').innerHTML=S.map((s,i)=>`<li><button data-i="${i}" class="${i?'':'on'}">${pad(i+1)} ${s.t}</button></li>`).join('');
 $('#svD').textContent=S[0].d;$('#svT').textContent=S[0].t;
 let cur=0,svST;
+function pl(i,d){const el=$('#svPL');el.innerHTML=S[i].items.map(r=>`<li><span>${LANG=='ar'?r[2]:r[0]}</span><b>${r[1]} ${LANG=='ar'?'درهم':'AED'}</b></li>`).join('');gsap.fromTo(el.children,{opacity:0,y:14},{opacity:1,y:0,duration:d?.8:0,stagger:.05,delay:d?.45:0,ease:'expo.out'})}
+$('#svN').textContent='01 / '+pad(n);if(window.gsap)pl(0,0);
 function setSvc(i,fast){if(i===cur)return;const sv=$$('.sv'),old=sv[cur],nw=sv[i],dir=i>cur?1:-1;cur=i;const d=fast||RM?0:1.1;
- $$('#svL button').forEach((b,k)=>b.classList.toggle('on',k===i));$('#svN').textContent=pad(i+1)+' / '+pad(n);
+ $$('#svL button').forEach((b,k)=>b.classList.toggle('on',k===i));pl(i,d);$('#svN').textContent=pad(i+1)+' / '+pad(n);
  gsap.set(nw,{visibility:'visible',zIndex:2});gsap.set(old,{zIndex:1});
  gsap.fromTo(nw,{clipPath:dir>0?'inset(100% 0 0 0)':'inset(0 0 100% 0)',scale:1.25},{clipPath:'inset(0% 0 0% 0)',scale:1,duration:d,ease:'expo.out',onComplete:()=>gsap.set(sv.filter(e=>e!==nw),{visibility:'hidden'})});
  gsap.to(old,{scale:.92,duration:d,ease:'expo.out'});
