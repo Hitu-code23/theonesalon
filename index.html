@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The One Gents Salon — TECOM, Dubai</title>
+<meta name="description" content="The One Gents Salon, MCN Hive, Barsha Heights, Dubai. Precision grooming. Elevated.">
+<meta name="theme-color" content="#080808">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080808;--bg2:#111;--tx:#F3F0EA;--mu:#9A9892;--ac:#C9B38F;--f:'Manrope','Inter Tight',system-ui,sans-serif;--e:cubic-bezier(.16,1,.3,1);--pad:clamp(20px,5vw,72px)}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--bg);-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--tx);font:300 clamp(16px,1.2vw,18px)/1.6 var(--f);overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:1px solid var(--ac);outline-offset:4px}
+body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.09;mix-blend-mode:overlay;animation:gr 1s steps(6) infinite;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes gr{0%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-4%)}60%{transform:translate(-3%,-2%)}80%{transform:translate(4%,4%)}100%{transform:translate(0,0)}}
+.meta{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--mu)}
+.ln{display:block;overflow:hidden;padding-bottom:.06em}.ln>*{display:block;will-change:transform}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-right:.22em}.w>span{display:inline-block;will-change:transform}
+/* scenes: replace via CONFIG.IMAGES */
+.sc{position:absolute;inset:-6%;background-size:cover;background-position:center;will-change:transform;background-color:#0c0b0a;
+background-image:radial-gradient(48% 55% at var(--x,70%) var(--y,35%),rgba(201,179,143,.30),transparent 70%),radial-gradient(40% 40% at calc(100% - var(--x,70%)) 85%,rgba(120,100,70,.18),transparent 70%),linear-gradient(var(--a,160deg),#1b1814,#080808 70%)}
+.sc::before{content:"";position:absolute;left:var(--x,70%);top:-10%;width:1px;height:130%;background:linear-gradient(transparent,rgba(201,179,143,.5),transparent);transform:rotate(12deg)}
+.sc::after{content:"";position:absolute;width:min(52vw,520px);aspect-ratio:1;left:calc(var(--x,70%) - 26vw);top:12%;border-radius:50%;border:1px solid rgba(201,179,143,.18);box-shadow:0 0 0 38px rgba(201,179,143,.03),0 0 0 90px rgba(201,179,143,.02)}
+.sc.img::before,.sc.img::after{display:none}
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:calc(18px + env(safe-area-inset-top,0px)) var(--pad) 18px;border-bottom:1px solid transparent;transition:background .5s,border-color .5s,backdrop-filter .5s}
+nav.on{background:rgba(8,8,8,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:rgba(243,240,234,.1)}
+.logo{font-weight:800;letter-spacing:.32em;font-size:14px;opacity:.75;transition:opacity .5s}nav.on .logo{opacity:1}
+.nl{display:flex;gap:clamp(18px,3vw,44px);align-items:center}.nl a{font-size:12px;letter-spacing:.22em}
+.nl a:not(.btn){position:relative;opacity:.8}.nl a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--e)}.nl a:not(.btn):hover::after{transform:scaleX(1)}
+.burger{display:none;width:44px;height:44px;position:relative;z-index:70}.burger i{position:absolute;left:10px;right:10px;height:1px;background:var(--tx);transition:transform .6s var(--e)}.burger i:nth-child(1){top:18px}.burger i:nth-child(2){top:26px}
+.menu-open .burger i:nth-child(1){transform:translateY(4px) rotate(45deg)}.menu-open .burger i:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+#menu{position:fixed;inset:0;z-index:65;background:#0b0a09;display:flex;flex-direction:column;justify-content:center;padding:var(--pad);clip-path:inset(0 0 100% 0);visibility:hidden}
+#menu a.mi{display:block;font-weight:800;font-size:clamp(40px,12vw,72px);line-height:1.15;letter-spacing:-.02em;overflow:hidden}#menu a.mi span{display:block}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:14px;padding:17px 28px;border:1px solid rgba(243,240,234,.35);font-size:12px;letter-spacing:.24em;font-weight:500;text-transform:uppercase;position:relative;overflow:hidden;transition:border-color .5s,color .5s;will-change:transform}
+.btn::before{content:"";position:absolute;inset:0;background:var(--ac);transform:translateY(101%);transition:transform .6s var(--e);z-index:-1}
+.btn:hover{border-color:var(--ac);color:#0a0a0a}.btn:hover::before{transform:none}.btn.p{background:rgba(243,240,234,.06)}
+.btn b{font-weight:300;display:inline-block;transition:transform .6s var(--e)}.btn:hover b{transform:translateX(6px)}
+.nl .btn{padding:11px 20px}
+.ctas{display:flex;gap:16px;flex-wrap:wrap}
+/* hero */
+#hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end}
+.hero-bg{--x:68%}.vig{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%,transparent 30%,rgba(0,0,0,.75)),linear-gradient(transparent 55%,#080808)}
+.hero-c{position:relative;padding:0 var(--pad) clamp(64px,11vh,120px);width:100%}
+h1{font-weight:800;line-height:.86;letter-spacing:-.04em;margin:18px 0 26px}
+.t1{font-size:clamp(64px,16.5vw,290px)}.t2{font-weight:300;font-size:clamp(18px,3.6vw,56px);letter-spacing:.38em;margin-top:.5em;color:var(--ac)}
+.sub{font-size:clamp(16px,1.6vw,22px);margin-bottom:34px;color:var(--tx);max-width:30ch}
+.si{position:absolute;right:var(--pad);bottom:34px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:11px;letter-spacing:.3em;writing-mode:vertical-rl;color:var(--mu)}
+.si i{width:1px;height:64px;background:rgba(243,240,234,.2);position:relative;overflow:hidden}.si i::after{content:"";position:absolute;inset:0;background:var(--ac);animation:sl 2.4s var(--e) infinite}
+@keyframes sl{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+/* generic sections */
+section{position:relative}main{position:relative;z-index:2;background:var(--bg)}
+.pad{padding:clamp(90px,16vh,200px) var(--pad)}
+.h2{font-weight:800;font-size:clamp(46px,8.4vw,150px);line-height:.92;letter-spacing:-.035em}
+.sn{display:flex;gap:16px;align-items:center;margin-bottom:28px}.sn::after{content:"";width:48px;height:1px;background:var(--ac)}
+/* experience */
+#exp{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,100px);align-items:center;min-height:100vh}
+#exp p.lead{max-width:36ch;margin-top:34px;color:var(--mu);font-size:clamp(17px,1.5vw,22px)}
+.fr{position:relative;aspect-ratio:4/5;overflow:hidden;clip-path:inset(14% 14% 14% 14%);will-change:clip-path}.fr .sc{--x:60%;--a:200deg}
+.fr .tag{position:absolute;left:18px;bottom:16px;z-index:2}
+/* services */
+#svc{height:100vh;height:100svh;min-height:560px;overflow:hidden;background:#000}
+#svc .stage{position:absolute;inset:0}#svc .stage .sc{inset:-4%}
+#svc .shade{position:absolute;inset:0;z-index:3;background:linear-gradient(90deg,rgba(8,8,8,.85),rgba(8,8,8,.1) 70%),linear-gradient(transparent 50%,rgba(8,8,8,.9))}
+.sv-in{position:absolute;inset:0;z-index:4;padding:calc(90px + env(safe-area-inset-top,0px)) var(--pad) clamp(40px,8vh,80px);display:flex;flex-direction:column;justify-content:flex-end;gap:20px}
+.cnt{font-size:13px;letter-spacing:.3em;color:var(--ac)}
+#svT{font-weight:800;font-size:clamp(52px,12vw,210px);line-height:.9;letter-spacing:-.04em;transition:transform .8s var(--e),color .5s;transform-origin:left}
+#svD{max-width:34ch;color:var(--tx);opacity:.85;font-size:clamp(16px,1.4vw,20px);min-height:3.4em}
+.sl{list-style:none;display:flex;gap:clamp(14px,3vw,36px);flex-wrap:wrap;margin-top:6px}
+.sl button{font-size:12px;letter-spacing:.22em;color:var(--mu);padding:10px 0;position:relative;transition:color .4s}.sl button::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--e)}
+.sl button:hover,.sl button.on{color:var(--tx)}.sl button.on::after,.sl button:hover::after{transform:scaleX(1)}
+.pg{position:absolute;z-index:5;left:var(--pad);right:var(--pad);bottom:0;height:2px;background:rgba(243,240,234,.12)}.pg i{display:block;height:100%;background:var(--ac);transform:scaleX(0);transform-origin:left}
+body.hv #svT:hover{transform:scale(1.04)}
+/* craft */
+#craft{height:150vh;overflow:hidden;background:#000}
+.cr-in{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:0 var(--pad)}
+.cr-in .sc{--x:35%;--a:120deg}
+.cr{position:relative;z-index:2;font-weight:800;font-size:clamp(44px,13.5vw,250px);line-height:.88;letter-spacing:-.045em;text-transform:uppercase}
+.cr .o{-webkit-text-stroke:1.5px var(--ac);color:transparent}
+.cr-m{position:absolute;z-index:3;left:var(--pad);bottom:34px}
+/* story */
+#story{height:100vh;height:100svh;overflow:hidden;display:flex;align-items:center}
+.trk{display:flex;gap:clamp(16px,3vw,48px);padding:0 var(--pad);will-change:transform}
+.pn{position:relative;flex:none;width:min(66vw,820px);height:min(72vh,720px);overflow:hidden}.pn:nth-child(2){margin-top:12vh;width:min(44vw,520px)}.pn:nth-child(3){margin-top:-8vh}
+.pn .tag{position:absolute;left:18px;bottom:16px;z-index:2}.pn .cap{position:absolute;right:18px;top:16px;z-index:2}
+.sth{position:absolute;z-index:3;left:var(--pad);top:calc(84px + env(safe-area-inset-top,0px));pointer-events:none}
+/* trust */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,4vw,60px);border-top:1px solid rgba(243,240,234,.12);margin-top:50px;padding-top:40px}
+.stats b{display:block;font-weight:800;font-size:clamp(46px,9vw,150px);line-height:1;letter-spacing:-.04em}.stats b em{font-style:normal;color:var(--ac);font-size:.5em}
+#rv{margin-top:60px;max-width:760px;min-height:150px}#rv q{display:block;font-size:clamp(20px,2.6vw,36px);line-height:1.3;quotes:none;font-weight:300}
+/* location */
+#loc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:center}
+.map{position:relative;aspect-ratio:1;max-height:70vh;width:100%;border:1px solid rgba(243,240,234,.12);overflow:hidden;background:radial-gradient(circle at 50% 50%,#17140f,#0a0908 70%)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}.map .l{stroke:rgba(201,179,143,.2);stroke-width:1;fill:none}.map .r{stroke:rgba(243,240,234,.35);stroke-width:1.5;fill:none}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pu 2.8s var(--e) infinite}@keyframes pu{0%{transform:scale(.3);opacity:.9}100%{transform:scale(3.2);opacity:0}}
+.map .meta{position:absolute;z-index:2}
+address{font-style:normal;font-weight:800;font-size:clamp(26px,3.4vw,50px);line-height:1.1;letter-spacing:-.02em;margin:24px 0 38px}
+/* final */
+#fin{min-height:100vh;min-height:100svh;overflow:hidden;display:flex;align-items:center;background:#000}
+#fin .sc{--x:50%;--y:60%}.fin-in{position:relative;z-index:3;padding:var(--pad);width:100%}
+#fin::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(8,8,8,.7),transparent)}
+.fin-in .h2{font-size:clamp(54px,11.5vw,210px)}.fin-in p{margin:28px 0 38px;color:var(--tx);opacity:.85}
+footer{position:relative;z-index:2;background:var(--bg);padding:50px var(--pad) calc(40px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;border-top:1px solid rgba(243,240,234,.1)}
+footer nav{all:unset}footer .fl{display:flex;gap:26px;flex-wrap:wrap}footer a{font-size:12px;letter-spacing:.2em;color:var(--mu);transition:color .4s}footer a:hover{color:var(--ac)}
+/* loader & cursor */
+#ld{position:fixed;inset:0;z-index:100;background:#080808;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px}
+#ld .wm{font-weight:800;font-size:clamp(34px,8vw,90px);letter-spacing:.3em;margin-right:-.3em;clip-path:inset(0 100% 0 0)}
+#ld .n{font-size:12px;letter-spacing:.4em;color:var(--ac)}
+#cur{position:fixed;z-index:95;left:0;top:0;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--tx);pointer-events:none;display:none;mix-blend-mode:difference;align-items:center;justify-content:center;font-size:0;color:#000}
+body.hv #cur{display:flex}body.hv,body.hv a,body.hv button{cursor:none}
+@media(max-width:860px){
+.nl a:not(.btn){display:none}.nl .btn{display:none}.burger{display:block}
+#exp,#loc{grid-template-columns:1fr;min-height:0}.fr{aspect-ratio:4/5;max-height:70vh;width:100%}
+.pn{width:78vw;height:62vh}.pn:nth-child(2){width:58vw;margin-top:10vh}.pn:nth-child(3){margin-top:0}
+.stats b{font-size:clamp(38px,13vw,80px)}.stats .meta{font-size:10px;letter-spacing:.18em}
+.si{display:none}.ctas .btn{width:100%;justify-content:space-between}.sv-in{padding-bottom:44px}.sl{gap:6px 18px}
+.t2{letter-spacing:.24em}.cr-in{justify-content:center}.map{max-height:none}
+body::after{opacity:.06}}
+@media(prefers-reduced-motion:reduce){body::after{animation:none}.si i::after,.pulse{animation:none}}
+</style></head><body>
+<div id="ld" aria-hidden="true"><div class="wm">THE ONE</div><div class="n">01</div></div>
+<div id="cur" aria-hidden="true"></div>
+<nav id="nav"><a class="logo" href="#hero" aria-label="The One Gents Salon, top">THE ONE</a>
+<div class="nl"><a href="#exp">EXPERIENCE</a><a href="#svc">SERVICES</a><a href="#craft">THE CRAFT</a><a href="#loc">LOCATION</a><a class="btn mag" data-act="book" href="#fin">BOOK NOW</a></div>
+<button class="burger" id="bg" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button></nav>
+<div id="menu" role="dialog" aria-label="Menu"><a class="mi" href="#exp"><span>Experience</span></a><a class="mi" href="#svc"><span>Services</span></a><a class="mi" href="#craft"><span>The Craft</span></a><a class="mi" href="#loc"><span>Location</span></a><a class="mi" data-act="book" href="#fin" style="color:var(--ac)"><span>Book now</span></a></div>
+
+<header id="hero"><div class="sc hero-bg" data-s="hero"></div><div class="vig"></div>
+<div class="hero-c"><p class="meta" id="hm">TECOM · DUBAI</p>
+<h1 aria-label="The One Gents Salon"><span class="ln"><span class="t1">THE ONE</span></span><span class="ln"><span class="t2">GENTS SALON</span></span></h1>
+<p class="sub" id="hs">Precision grooming. Elevated.</p>
+<div class="ctas" id="hc"><a class="btn p mag" data-act="book" href="#fin" data-cur="v">Book your experience <b>→</b></a><a class="btn mag" href="#svc">Explore services <b>→</b></a></div></div>
+<div class="si" aria-hidden="true">SCROLL<i></i></div></header>
+
+<main>
+<section id="exp" class="pad"><div><div class="sn meta">01 · The experience</div>
+<h2 class="h2" id="eh">MORE THAN A HAIRCUT.</h2>
+<p class="lead" id="ep">An elevated grooming experience built around precision, confidence and attention to detail.</p></div>
+<div class="fr" data-cur="v"><div class="sc" data-s="exp"></div><span class="tag meta">MCN Hive · Barsha Heights</span></div></section>
+
+<section id="svc" aria-label="Services"><div class="stage" id="stage"></div><div class="shade"></div>
+<div class="sv-in"><div class="cnt" id="svN">01 / 05</div><div class="ln"><div id="svT">HAIRCUT</div></div><p id="svD"></p><ul class="sl" id="svL"></ul></div><div class="pg"><i id="svP"></i></div></section>
+
+<section id="craft" aria-label="The craft"><div class="cr-in"><div class="sc" data-s="craft"></div>
+<h2 class="cr" id="crt"><span class="ln"><span>Precision</span></span><span class="ln o"><span>is the</span></span><span class="ln"><span>Difference.</span></span></h2>
+<span class="cr-m meta">03 · The craft</span></div></section>
+
+<section id="story" aria-label="Visual story"><div class="sth meta">04 · Visual story</div><div class="trk" id="trk">
+<div class="pn" data-cur="v"><div class="sc" data-s="s0"></div><span class="tag meta">Cut</span><span class="cap meta">I</span></div>
+<div class="pn" data-cur="v"><div class="sc" data-s="s1" style="--x:30%;--a:210deg"></div><span class="tag meta">Detail</span><span class="cap meta">II</span></div>
+<div class="pn" data-cur="v"><div class="sc" data-s="s2" style="--x:55%;--a:130deg"></div><span class="tag meta">Finish</span><span class="cap meta">III</span></div>
+<div class="pn" data-cur="v"><div class="sc" data-s="s3" style="--x:78%"></div><span class="tag meta">Confidence</span><span class="cap meta">IV</span></div></div></section>
+
+<section id="trust" class="pad" aria-label="Reputation"><div class="sn meta">05 · Reputation</div>
+<h2 class="h2">Trusted in TECOM.</h2>
+<div class="stats"><div><b><span id="c1">0</span><em>★</em></b><span class="meta">Google rating</span></div><div><b><span id="c2">0</span><em>+</em></b><span class="meta">Reviews</span></div><div><b>TECOM</b><span class="meta">Dubai</span></div></div>
+<div id="rv" aria-live="polite" hidden></div></section>
+
+<section id="loc" class="pad"><div><div class="sn meta">06 · Location</div>
+<h2 class="h2" style="font-size:clamp(40px,6.4vw,110px)">Find us.</h2>
+<address>THE ONE GENTS SALON<br>MCN Hive, Ground Floor<br>Barsha Heights, Dubai</address>
+<div class="ctas"><a class="btn p mag" data-act="dir" target="_blank" rel="noopener" href="#">Get directions <b>→</b></a><a class="btn mag" data-act="call" href="#">Call salon <b>→</b></a></div></div>
+<div class="map" aria-hidden="true"><svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"><g id="grid"></g><path class="r" d="M-10 260 C 90 240,150 120,230 140 S 340 200,420 90"/><path class="r" d="M60 420 C 120 330,190 250,200 200 S 210 60,300 -10" opacity=".6"/><circle class="pulse" cx="200" cy="200" r="14" fill="#C9B38F"/><circle cx="200" cy="200" r="5" fill="#F3F0EA"/></svg>
+<span class="meta" style="left:16px;top:14px">25°N 55°E</span><span class="meta" style="right:16px;bottom:14px">MCN Hive · G/F</span></div></section>
+
+<section id="fin"><div class="sc" data-s="cta"></div><div class="fin-in"><div class="sn meta">07 · Reserve</div>
+<h2 class="h2" id="fh"><span class="ln"><span>Ready</span></span><span class="ln"><span>for your</span></span><span class="ln"><span>next look?</span></span></h2>
+<p id="fp">Your next appointment starts here.</p>
+<div class="ctas" id="fc"><a class="btn p mag" data-act="book" href="#" data-cur="b">Book your experience <b>→</b></a><a class="btn mag" data-act="call" href="#">Contact the salon <b>→</b></a></div></div></section>
+</main>
+<footer><div><p style="font-weight:800;letter-spacing:.24em;font-size:14px">THE ONE GENTS SALON</p><p class="meta" style="margin-top:6px">TECOM · DUBAI</p></div>
+<div class="fl"><a data-act="ig" href="#">Instagram</a><a data-act="wa" href="#">WhatsApp</a><a data-act="call" href="#">Phone</a><a data-act="dir" target="_blank" rel="noopener" href="#">Google Maps</a></div>
+<p class="meta" style="width:100%;font-size:11px">© <span id="yr"></span> The One Gents Salon. All rights reserved.</p></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ===== EDIT BUSINESS INFO HERE ===== */
+const CONFIG={
+ BUSINESS_NAME:'The One Gents Salon',
+ PHONE:'',            // e.g. '+9715XXXXXXXX'
+ WHATSAPP:'',         // digits only, e.g. '9715XXXXXXXX'
+ INSTAGRAM:'',        // full URL
+ BOOKING_URL:'',      // optional booking link; falls back to WhatsApp > phone
+ GOOGLE_MAPS:'https://www.google.com/maps/search/?api=1&query=The+One+Gents+Salon+MCN+Hive+Barsha+Heights+Dubai',
+ OPENING_HOURS:'',    // not shown until provided
+ STATS:{rating:4.8,reviews:500}, // TODO confirm against live Google profile before launch; set null to show dashes
+ REVIEWS:[],          // [{text:'…',name:'…'}] real Google reviews only
+ SERVICES:[           // confirm with salon: names/descriptions
+  {t:'HAIRCUT',d:'Precision cuts & styling'},{t:'BEARD',d:'Shape. Detail. Definition.'},
+  {t:'FACIAL',d:'Refresh & restore'},{t:'MANICURE',d:'Clean. Refined. Finished.'},{t:'PEDICURE',d:'Precision from head to toe.'}],
+ IMAGES:{hero:'',exp:'',craft:'',cta:'',s0:'',s1:'',s2:'',s3:'',svc:['','','','','']} // drop in editorial photos (URL or relative path)
+};
+/* =================================== */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches,FINE=matchMedia('(hover:hover) and (pointer:fine)').matches,MOB=innerWidth<861;
+$('#yr').textContent=new Date().getFullYear();
+// images
+$$('.sc[data-s]').forEach(e=>{const u=CONFIG.IMAGES[e.dataset.s];if(u){e.style.backgroundImage=`linear-gradient(rgba(8,8,8,.35),rgba(8,8,8,.35)),url(${u})`;e.classList.add('img')}});
+// links
+const C=CONFIG,wa=C.WHATSAPP&&'https://wa.me/'+C.WHATSAPP.replace(/\D/g,'');
+const L={book:C.BOOKING_URL||wa||(C.PHONE&&'tel:'+C.PHONE)||'#loc',call:C.PHONE?'tel:'+C.PHONE:(wa||'#loc'),wa:wa||'#loc',ig:C.INSTAGRAM||'#hero',dir:C.GOOGLE_MAPS};
+$$('[data-act]').forEach(a=>{a.href=L[a.dataset.act];if(/^http/.test(a.href)&&a.dataset.act!='dir'){a.target='_blank';a.rel='noopener'}});
+// map grid
+$('#grid').innerHTML=Array.from({length:11},(_,i)=>`<path class="l" d="M${i*40} 0V400M0 ${i*40}H400"/>`).join('');
+// services DOM
+const S=C.SERVICES,n=S.length,pad=v=>String(v).padStart(2,'0');
+$('#stage').innerHTML=S.map((s,i)=>`<div class="sc sv" style="--x:${[70,30,60,40,75][i%5]}%;--y:${[35,55,30,60,40][i%5]}%;--a:${150+i*25}deg${i?';visibility:hidden':''}"></div>`).join('');
+$$('.sv').forEach((e,i)=>{const u=C.IMAGES.svc[i];if(u){e.style.backgroundImage=`linear-gradient(rgba(8,8,8,.3),rgba(8,8,8,.3)),url(${u})`;e.classList.add('img')}});
+$('#svL').innerHTML=S.map((s,i)=>`<li><button data-i="${i}" class="${i?'':'on'}">${pad(i+1)} ${s.t}</button></li>`).join('');
+$('#svD').textContent=S[0].d;
+let cur=0,svST;
+function setSvc(i,fast){if(i===cur)return;const sv=$$('.sv'),old=sv[cur],nw=sv[i],dir=i>cur?1:-1;cur=i;const d=fast||RM?0:1.1;
+ $$('#svL button').forEach((b,k)=>b.classList.toggle('on',k===i));$('#svN').textContent=pad(i+1)+' / '+pad(n);
+ gsap.set(nw,{visibility:'visible',zIndex:2});gsap.set(old,{zIndex:1});
+ gsap.fromTo(nw,{clipPath:dir>0?'inset(100% 0 0 0)':'inset(0 0 100% 0)',scale:1.25},{clipPath:'inset(0% 0 0% 0)',scale:1,duration:d,ease:'expo.out',onComplete:()=>gsap.set(sv.filter(e=>e!==nw),{visibility:'hidden'})});
+ gsap.to(old,{scale:.92,duration:d,ease:'expo.out'});
+ gsap.timeline().to('#svT',{yPercent:-110*dir,duration:d?.35:0,ease:'power3.in'}).add(()=>{$('#svT').textContent=S[i].t;$('#svD').textContent=S[i].d}).fromTo('#svT',{yPercent:110*dir},{yPercent:0,duration:d?.9:0,ease:'expo.out'});
+ gsap.fromTo('#svD',{opacity:0,y:14},{opacity:.85,y:0,duration:d?.9:0,delay:d?.35:0})}
+$('#svL').onclick=e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i;
+ if(svST){scrollTo({top:svST.start+(i+.5)/n*(svST.end-svST.start),behavior:'smooth'})}else setSvc(i)};
+// nav + menu
+const nav=$('#nav'),menu=$('#menu');let open=false;
+addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>60),{passive:true});
+function toggleMenu(f){open=f??!open;document.body.classList.toggle('menu-open',open);$('#bg').setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';
+ if(open){gsap.set(menu,{visibility:'visible'});gsap.to(menu,{clipPath:'inset(0 0 0% 0)',duration:RM?0:1,ease:'expo.out'});gsap.fromTo('#menu .mi span',{yPercent:110},{yPercent:0,duration:RM?0:1,stagger:.07,delay:.15,ease:'expo.out'})}
+ else gsap.to(menu,{clipPath:'inset(0 0 100% 0)',duration:RM?0:.7,ease:'expo.inOut',onComplete:()=>gsap.set(menu,{visibility:'hidden'})})}
+$('#bg').onclick=()=>toggleMenu();$$('#menu a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&open)toggleMenu(false)});
+// reviews
+if(C.REVIEWS.length){const rv=$('#rv');rv.hidden=false;let k=0;const show=()=>{const r=C.REVIEWS[k%C.REVIEWS.length];rv.innerHTML=`<q>${r.text}</q><span class="meta" style="display:block;margin-top:18px">${r.name||''}</span>`;if(!RM)gsap.fromTo(rv.children,{opacity:0,y:24},{opacity:1,y:0,duration:1,stagger:.1,ease:'expo.out'});k++};show();if(C.REVIEWS.length>1)setInterval(show,6000)}
+// counters
+const st=C.STATS;function counters(){const go=(el,v,dec)=>{if(v==null){el.textContent='—';return}const o={v:0};gsap.to(o,{v,duration:RM?0:2.2,ease:'power3.out',onUpdate:()=>el.textContent=o.v.toFixed(dec)})};go($('#c1'),st&&st.rating,1);go($('#c2'),st&&st.reviews,0)}
+if(RM){counters();setSvc(0,1)}
+// ===== motion =====
+function init(){
+ gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true});
+ const T=ScrollTrigger;
+ // hero intro
+ gsap.set(['.t1','.t2'],{yPercent:115});gsap.set(['#hm','#hs'],{opacity:0,y:24});gsap.set('#hc .btn',{opacity:0,y:26});gsap.set('.hero-bg',{scale:1.28});gsap.set('.si',{opacity:0});
+ const hero=()=>{gsap.timeline({defaults:{ease:'expo.out'}}).to('.hero-bg',{scale:1.02,duration:2.8,ease:'power2.out'},0).to('#hm',{opacity:1,y:0,duration:1.1},.15).to('.t1',{yPercent:0,duration:1.4},.3).to('.t2',{yPercent:0,duration:1.3},.5).to('#hs',{opacity:1,y:0,duration:1.1},.85).to('#hc .btn',{opacity:1,y:0,duration:1,stagger:.12},1.05).to('.si',{opacity:1,duration:1},1.4)};
+ // loader (~1.4s)
+ const ld=$('#ld'),num=ld.querySelector('.n');
+ gsap.timeline({onComplete:()=>{gsap.to(ld,{clipPath:'inset(0 0 100% 0)',duration:.9,ease:'expo.inOut',onComplete:()=>ld.remove()});hero()}})
+  .to('.wm',{clipPath:'inset(0 0% 0 0)',duration:.7,ease:'expo.out'},0).add(()=>num.textContent='02',.4).add(()=>num.textContent='03',.8).to({},{duration:.25});
+ // hero scroll transformation
+ const hs=gsap.timeline({scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+ hs.to('.hero-bg',{scale:1.3,yPercent:10,filter:MOB?'brightness(.45)':'blur(5px) brightness(.45)',ease:'none'},0).to('.t1',{xPercent:-6,ease:'none'},0).to('.t2',{xPercent:10,ease:'none'},0).to('.hero-c',{yPercent:-22,opacity:.1,ease:'none'},0).to('.si',{opacity:0},0);
+ // experience
+ const eh=$('#eh');eh.innerHTML=eh.textContent.split(' ').map(w=>`<span class="w"><span>${w}</span></span>`).join('');
+ gsap.from('#eh .w>span',{yPercent:115,rotate:3,duration:1.3,stagger:.12,ease:'expo.out',scrollTrigger:{trigger:'#eh',start:'top 82%'}});
+ gsap.from('#ep',{opacity:0,y:30,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:'#ep',start:'top 90%'}});
+ gsap.fromTo('.fr',{clipPath:'inset(14% 14% 14% 14%)',rotate:MOB?2:4},{clipPath:'inset(0% 0% 0% 0%)',rotate:0,ease:'none',scrollTrigger:{trigger:'.fr',start:'top 92%',end:'top 22%',scrub:.6}});
+ gsap.fromTo('.fr .sc',{yPercent:-8},{yPercent:8,ease:'none',scrollTrigger:{trigger:'.fr',start:'top bottom',end:'bottom top',scrub:true}});
+ gsap.to('#exp>div:first-child',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'#exp',start:'top bottom',end:'bottom top',scrub:true}});
+ // services pinned
+ svST=T.create({trigger:'#svc',start:'top top',end:'+='+(n*(MOB?70:90))+'%',pin:true,anticipatePin:1,onUpdate:s=>{setSvc(Math.min(n-1,Math.floor(s.progress*n)));gsap.set('#svP',{scaleX:s.progress})}});
+ gsap.from('#svc .sv-in>*',{opacity:0,y:40,stagger:.1,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:'#svc',start:'top 60%'}});
+ // craft
+ const cs=gsap.timeline({scrollTrigger:{trigger:'#craft',start:'top bottom',end:'bottom top',scrub:true}});
+ cs.fromTo('#craft .sc',{scale:1.05,yPercent:-12},{scale:1.4,yPercent:12,ease:'none'},0).fromTo('#crt .ln:nth-child(1)>span',{xPercent:-22},{xPercent:14,ease:'none'},0).fromTo('#crt .ln:nth-child(2)>span',{xPercent:30},{xPercent:-30,ease:'none'},0).fromTo('#crt .ln:nth-child(3)>span',{xPercent:-12},{xPercent:10,ease:'none'},0);
+ gsap.from('#crt .ln',{clipPath:'inset(0 0 100% 0)',duration:1.2,stagger:.15,ease:'expo.out',scrollTrigger:{trigger:'#craft',start:'top 55%'}});
+ // visual story: horizontal
+ const trk=$('#trk');
+ gsap.to(trk,{x:()=>-(trk.scrollWidth-innerWidth),ease:'none',scrollTrigger:{trigger:'#story',start:'top top',end:()=>'+='+(trk.scrollWidth-innerWidth),pin:true,scrub:.8,invalidateOnRefresh:true,anticipatePin:1}});
+ $$('.pn .sc').forEach((s,i)=>gsap.fromTo(s,{scale:1.35},{scale:1,ease:'none',scrollTrigger:{trigger:'#story',start:'top top',end:()=>'+='+(trk.scrollWidth-innerWidth),scrub:true}}));
+ // trust
+ T.create({trigger:'#trust',start:'top 65%',once:true,onEnter:counters});
+ gsap.from('.stats>div',{opacity:0,y:50,stagger:.15,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:'.stats',start:'top 85%'}});
+ // location
+ gsap.from('.map',{clipPath:'inset(0 0 100% 0)',duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'.map',start:'top 85%'}});
+ gsap.from('#grid path',{opacity:0,duration:1.6,stagger:.04,scrollTrigger:{trigger:'.map',start:'top 85%'}});
+ // final CTA
+ gsap.fromTo('#fin .sc',{scale:1.3},{scale:1,ease:'none',scrollTrigger:{trigger:'#fin',start:'top bottom',end:'bottom bottom',scrub:true}});
+ gsap.from('#fh .ln>span',{yPercent:115,duration:1.5,stagger:.14,ease:'expo.out',scrollTrigger:{trigger:'#fin',start:'top 55%'}});
+ gsap.from('#fp',{opacity:0,y:24,duration:1.2,delay:.4,scrollTrigger:{trigger:'#fin',start:'top 55%'}});
+ gsap.from('#fc .btn',{scale:.85,opacity:0,duration:1.1,stagger:.12,delay:.7,ease:'expo.out',scrollTrigger:{trigger:'#fin',start:'top 55%'}});
+ // scroll velocity (subtle skew on imagery, settles on stop)
+ const vel=$$('.fr,.pn,#craft .sc'),qs=vel.map(e=>gsap.quickTo(e,'skewY',{duration:.8,ease:'power3.out'})),k=MOB?500:380;
+ T.create({onUpdate:s=>{const v=gsap.utils.clamp(-2.5,2.5,s.getVelocity()/-k);qs.forEach(q=>q(v))}});
+ T.addEventListener('scrollEnd',()=>qs.forEach(q=>q(0)));
+ // cursor + magnetic (desktop fine pointers only)
+ if(FINE){document.body.classList.add('hv');const c=$('#cur'),qx=gsap.quickTo(c,'x',{duration:.25,ease:'power3'}),qy=gsap.quickTo(c,'y',{duration:.25,ease:'power3'});
+  addEventListener('mousemove',e=>{qx(e.clientX);qy(e.clientY)},{passive:true});
+  const big=(w,t)=>{gsap.to(c,{width:w,height:w,margin:`${-w/2}px 0 0 ${-w/2}px`,duration:.5,ease:'expo.out'});c.textContent=t||'';c.style.fontSize=t?'10px':'0';c.style.letterSpacing='.2em';c.style.background=t?'#F3F0EA':'#F3F0EA'};
+  $$('a,button').forEach(a=>{a.addEventListener('mouseenter',()=>big(a.dataset.cur?72:44,a.dataset.cur=='v'?'VIEW':''));a.addEventListener('mouseleave',()=>big(8))});
+  $$('[data-cur=v]:not(a)').forEach(a=>{a.addEventListener('mouseenter',()=>big(78,'VIEW'));a.addEventListener('mouseleave',()=>big(8))});
+  $$('.mag').forEach(b=>{const x=gsap.quickTo(b,'x',{duration:.6,ease:'power3'}),y=gsap.quickTo(b,'y',{duration:.6,ease:'power3'});
+   b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();x((e.clientX-r.left-r.width/2)*.3);y((e.clientY-r.top-r.height/2)*.4)});b.addEventListener('mouseleave',()=>{x(0);y(0)})})}
+ addEventListener('load',()=>T.refresh());
+}
+if(RM){$('#ld').remove()}else if(window.gsap&&window.ScrollTrigger){init()}else{$('#ld').remove()}
+</script>
+</body></html>
